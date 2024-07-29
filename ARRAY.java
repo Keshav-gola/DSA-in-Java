@@ -1,6 +1,24 @@
 package Java;
 import java.util.*;
 public class ARRAY {
+    public static int sub_arry(int arr[]){
+        int sum , maxSubArry = Integer.MIN_VALUE;
+        for(int i = 0; i<arr.length; i++){
+            for(int j = i; j<arr.length; j++){
+                sum = 0;
+                for(int k = i; k<=j; k++ ){
+                    System.out.print(+arr[k]);
+                    sum += arr[k];
+                }
+                System.out.println();
+                if(maxSubArry<sum){
+                    maxSubArry = sum;
+                }
+            }
+            System.out.println();
+        }
+        return maxSubArry;
+    }
     public static int tapping_rainwater(int arr[]){
         int n = arr.length;
         //Calculate left max boundary
@@ -44,7 +62,9 @@ public class ARRAY {
         //     System.out.print(arr[i]+" ");
         // }
 
-        int waterValue = tapping_rainwater(arr);
-        System.out.println(waterValue);
+        // int waterValue = tapping_rainwater(arr);
+        // System.out.println(waterValue);
+        int total = sub_arry(arr);
+        System.out.println(total);
     }
 }
