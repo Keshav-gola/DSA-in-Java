@@ -12,6 +12,19 @@ public class ARRAY {
             }
         }
     }
+    public static void selection_sort(int arr[]){
+        for(int i = 0; i<arr.length-1; i++){
+            int min = i;
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[min] > arr[j]){
+                    min = j;
+                }
+            }
+            int temp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = temp;
+        }
+    }
     public static int sub_arry(int arr[]){
         int sum , maxSubArry = Integer.MIN_VALUE;
         for(int i = 0; i<arr.length; i++){
@@ -77,7 +90,8 @@ public class ARRAY {
         // System.out.println(waterValue);
         // int total = sub_arry(arr);
         // System.out.println(total);
-        bubble_sort(arr);
+        //bubble_sort(arr);
+        selection_sort(arr);
         for(int i = 0; i<arr.length; i++){
             System.out.print(arr[i]);
         }
