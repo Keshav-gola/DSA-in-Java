@@ -1,6 +1,18 @@
 package Java;
 import java.util.*;
 public class ARRAY {
+    public static void insertion_sort(int arr[]){
+        for(int i = 1; i<arr.length; i++){
+            int curr = arr[i];
+            int prev = i-1;
+
+            while(prev >= 0 && arr[prev] > curr){
+                arr[prev+1] = arr[prev];
+                prev --;
+            }
+            arr[prev+1] = curr;
+        }
+    }
     public static void bubble_sort(int arr[]){
         for(int i = 0; i<arr.length-1; i++){
             for(int j=0; j<arr.length-1-i; j++ ){
@@ -91,7 +103,8 @@ public class ARRAY {
         // int total = sub_arry(arr);
         // System.out.println(total);
         //bubble_sort(arr);
-        selection_sort(arr);
+        //selection_sort(arr);
+        insertion_sort(arr);
         for(int i = 0; i<arr.length; i++){
             System.out.print(arr[i]);
         }
