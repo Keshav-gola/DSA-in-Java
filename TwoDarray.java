@@ -1,6 +1,25 @@
 package Java;
 import java.util.*;
 public class TwoDarray {
+    public static boolean search(int arr[][], int key){
+        int row = 0; int col = arr[0].length-1;
+
+        while (row < arr.length && col >=0){
+            if(arr[row][col] == key){
+                System.out.println("found key at = ("+row+","+col+")");
+                return true;
+            }
+
+            else if(key < arr[row][col]){
+                col--;
+            }
+            else{
+                row++;
+            }
+        }
+        System.out.println("key not found");
+        return false;
+    }
     public static int diagonal (int arr[][]){
         int sum = 0; 
 
@@ -76,7 +95,7 @@ public class TwoDarray {
         //     }
         //     System.out.println();
         // }
-        int sum = diagonal(arr);
+        boolean sum = search(arr, 25);
         System.out.println(sum);
     }
 }
