@@ -1,6 +1,26 @@
 package Java;
 import java.util.*;
 public class Strings {
+    public static float shortestPath(String str){
+        int x =0, y=0;
+        for(int i = 0; i<=str.length()-1; i++){
+            if(str.charAt(i)=='W'){
+                x--;
+            }
+            else if(str.charAt(i) == 'E'){
+                x++;
+            }
+            else if(str.charAt(i) == 'N'){
+                y++;
+            }
+            else{
+                y--;
+            }
+        }
+        int X = x*x;
+        int Y = y*y;
+        return (float)Math.sqrt(X+Y);
+    }
     public static boolean palimdrom(String str){
         int n = str.length()-1;
         for(int i = 0; i<=n/2; i++){
@@ -20,6 +40,9 @@ public class Strings {
         // System.out.println(str+"\n"+str1);
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        palimdrom(str);
+        //palimdrom(str);
+        String path = "WNEENESENNN";
+        float a = shortestPath(path);
+        System.out.println(a);
     }
 }
