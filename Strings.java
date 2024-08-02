@@ -1,6 +1,21 @@
 package Java;
 import java.util.*;
 public class Strings {
+    public static StringBuilder compress(String str){
+        StringBuilder st = new StringBuilder("");
+        for(int i = 0; i<str.length(); i++){
+            Integer count = 1;
+            while(i<str.length()-1 && str.charAt(i) == str.charAt(i+1)){
+                count++;
+                i++;
+            }
+            st.append(str.charAt(i));
+            if(count > 1){
+                st.append(count.toString());
+            }
+        }
+        return st;
+    }
     public static StringBuilder upperString(String str) {
         StringBuilder  sb = new StringBuilder("");
 
@@ -67,7 +82,7 @@ public class Strings {
         //float a = shortestPath(path);
         //System.out.println(a);
         //subString(str, sc.nextInt(), sc.nextInt());
-        StringBuilder sb = upperString(str);
+        StringBuilder sb = compress(str);
         System.out.println(sb);
     }
 }
