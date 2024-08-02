@@ -1,6 +1,28 @@
 package Java;
 import java.util.*;
 public class Strings {
+    public static StringBuilder upperString(String str) {
+        StringBuilder  sb = new StringBuilder("");
+
+        char ch = Character.toUpperCase(str.charAt(0));
+        sb.append(ch);
+        for(int i = 1; i<str.length(); i++){
+            if(str.charAt(i) == ' '){
+                sb.append(str.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(str.charAt(i)));
+            }
+            else{
+                sb.append(str.charAt(i));
+            }
+        }
+        return sb;
+    }
+    public static void subString(String str, int si, int ei){
+        for(int i = si; i<=ei; i++){
+            System.out.print(str.charAt(i));
+        }
+    }
     public static float shortestPath(String str){
         int x =0, y=0;
         for(int i = 0; i<=str.length()-1; i++){
@@ -41,8 +63,11 @@ public class Strings {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
         //palimdrom(str);
-        String path = "WNEENESENNN";
-        float a = shortestPath(path);
-        System.out.println(a);
+        //String path = "WNEENESENNN";
+        //float a = shortestPath(path);
+        //System.out.println(a);
+        //subString(str, sc.nextInt(), sc.nextInt());
+        StringBuilder sb = upperString(str);
+        System.out.println(sb);
     }
 }
