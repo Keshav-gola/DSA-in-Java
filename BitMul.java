@@ -1,6 +1,15 @@
 package Java;
 import java.util.*;
 public class BitMul {
+    public static int getIthbit(int n, int i){
+        int bitmas = 1<<i;
+        if((n & bitmas) == 0){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
     public static void evenOrodd(int num){
         num = num & 1;
         if(num == 0){
@@ -35,6 +44,8 @@ public class BitMul {
         System.out.println(a>>b);
 
         evenOrodd(a);
+
+        System.out.println(getIthbit(a, b));
 
     }
 }
