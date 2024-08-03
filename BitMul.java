@@ -1,6 +1,10 @@
 package Java;
 import java.util.*;
 public class BitMul {
+    public static int setIthbit(int n, int i) {
+        int bitmas = 1<<i;
+        return n|bitmas;
+    }
     public static int getIthbit(int n, int i){
         int bitmas = 1<<i;
         if((n & bitmas) == 0){
@@ -47,5 +51,6 @@ public class BitMul {
 
         System.out.println(getIthbit(a, b));
 
+        System.out.println(setIthbit(a, b));
     }
 }
