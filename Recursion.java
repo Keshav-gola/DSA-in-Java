@@ -1,6 +1,14 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int sum(int n){
+        if(n == 1){
+            return 1;
+        }
+        int Snm1 = sum(n-1);
+        int total = n + Snm1;
+        return total;
+    }
     public static int fact(int num){
         if(num == 0){
             return 1;
@@ -28,5 +36,6 @@ public class Recursion {
     public static void main(String args[]) {
         //cout(10);
         System.out.println(fact(5));
+        System.out.println(sum(10));
     }
 }
