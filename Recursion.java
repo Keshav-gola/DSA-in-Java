@@ -1,6 +1,25 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static boolean isSorted (int arr[], int i){
+        if(i == arr.length-1){
+            return true;
+        }
+
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+        return isSorted(arr, i+1);
+    }
+    public static int fabinachi(int num){
+        if(num == 0 || num == 1){
+            return num;
+        }
+        int fnm1 = fact(num -1);
+        int fnm2 = fact(num - 2);
+        int fb = fnm1 + fnm2;
+        return fb;
+    }
     public static int sum(int n){
         if(n == 1){
             return 1;
@@ -37,5 +56,8 @@ public class Recursion {
         //cout(10);
         System.out.println(fact(5));
         System.out.println(sum(10));
+        System.out.println(fabinachi(10));
+        int arr[] = {8,9,10,15,16};
+        System.out.println(isSorted(arr, 0));
     }
 }
