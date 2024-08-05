@@ -1,6 +1,15 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int firstOccurs(int arr[], int key, int i){
+        if(i == arr.length-1){
+            return -1;
+        }
+        if(arr[i] == key){
+            return i;
+        }
+        return firstOccurs(arr, key, i+1);
+    }
     public static boolean isSorted (int arr[], int i){
         if(i == arr.length-1){
             return true;
@@ -59,5 +68,6 @@ public class Recursion {
         System.out.println(fabinachi(10));
         int arr[] = {8,9,10,15,16};
         System.out.println(isSorted(arr, 0));
+        System.out.println(firstOccurs(arr, 15, 0));
     }
 }
