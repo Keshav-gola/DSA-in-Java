@@ -1,6 +1,16 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int lastOccurs(int arr[], int key, int i){
+        if(i == arr.length){
+            return -1;
+        }
+        int lastFound = lastOccurs(arr, key, i+1);
+        if(lastFound == -1 && arr[i] == key){
+            return i;
+        }
+        return lastFound;
+    }
     public static int firstOccurs(int arr[], int key, int i){
         if(i == arr.length-1){
             return -1;
@@ -69,5 +79,6 @@ public class Recursion {
         int arr[] = {8,9,10,15,16};
         System.out.println(isSorted(arr, 0));
         System.out.println(firstOccurs(arr, 15, 0));
+        System.out.println(lastOccurs(arr, 5, 0));
     }
 }
