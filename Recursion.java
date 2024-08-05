@@ -1,6 +1,14 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int power(int x, int n){
+        if(n == 0){
+            return 1;
+        }
+        int xtmn = power(x,n-1);
+        int xn = x * xtmn;
+        return xn; 
+    }
     public static int lastOccurs(int arr[], int key, int i){
         if(i == arr.length){
             return -1;
@@ -80,5 +88,6 @@ public class Recursion {
         System.out.println(isSorted(arr, 0));
         System.out.println(firstOccurs(arr, 15, 0));
         System.out.println(lastOccurs(arr, 5, 0));
+        System.out.println(power(25, 0));
     }
 }
