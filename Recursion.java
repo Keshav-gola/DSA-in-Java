@@ -1,6 +1,19 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int optimzPower(int a, int n){
+        if(n == 0){
+            return -1;
+        }
+        int halfPow = optimzPower(a, n/2);
+        int halfPowSq = halfPow * halfPow;
+
+        // n = odd
+        if(n % 2 != 0){
+            halfPowSq = a * halfPowSq;
+        }
+        return halfPowSq;
+    }
     public static int power(int x, int n){
         if(n == 0){
             return 1;
@@ -89,5 +102,6 @@ public class Recursion {
         System.out.println(firstOccurs(arr, 15, 0));
         System.out.println(lastOccurs(arr, 5, 0));
         System.out.println(power(25, 0));
+        System.out.println(optimzPower(5, 2));
     }
 }
