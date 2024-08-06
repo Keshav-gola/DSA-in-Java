@@ -1,6 +1,20 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static void removeDuplicate(boolean map[], StringBuilder newStr, int idx, String str ){
+        if(idx == str.length()){
+            System.out.println(newStr);
+            return;
+        }
+        char currElement = str.charAt(idx);
+        if(map[currElement - 'a'] == true){
+            removeDuplicate(map, newStr, idx+1, str);
+        }
+        else{
+            map[currElement - 'a'] = true;
+            removeDuplicate(map, newStr.append(currElement), idx+1, str);
+        }
+    }
     public static int tiling(int n){
         //base case
         if(n == 0 || n == 1){
@@ -110,7 +124,7 @@ public class Recursion {
         //cout(10);
         System.out.println(fact(5));
         System.out.println(sum(10));
-        System.out.println(fabinachi(10));
+        System.out.println(fabinachi(4));
         int arr[] = {8,9,10,15,16};
         System.out.println(isSorted(arr, 0));
         System.out.println(firstOccurs(arr, 15, 0));
@@ -118,5 +132,10 @@ public class Recursion {
         System.out.println(power(25, 0));
         System.out.println(optimzPower(5, 2));
         System.out.println(tiling(4));
+        StringBuilder newStr = new StringBuilder("");
+        boolean map[] = new boolean[26];
+        String str = "kessshhavv";
+        removeDuplicate(map, newStr, 0, str);
+
     }
 }
