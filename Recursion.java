@@ -1,6 +1,18 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int friendpaired(int n){
+        //Base
+        if(n == 1 || n == 2){
+            return n;
+        }
+        //Single
+        int single = friendpaired(n-1);
+        //paired
+        int paired = (n-1) * friendpaired(n-2);
+        int total = single + paired;
+        return total;
+    }
     public static void removeDuplicate(boolean map[], StringBuilder newStr, int idx, String str ){
         if(idx == str.length()){
             System.out.println(newStr);
@@ -136,6 +148,7 @@ public class Recursion {
         boolean map[] = new boolean[26];
         String str = "kessshhavv";
         removeDuplicate(map, newStr, 0, str);
+        System.out.println(friendpaired(5));
 
     }
 }
