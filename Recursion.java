@@ -1,6 +1,20 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static int tiling(int n){
+        //base case
+        if(n == 0 || n == 1){
+            return 1;
+        }
+        //kaam
+        //vertical 
+        int fnm1 = tiling(n-1);
+        //horizontal
+        int fnm2 = tiling(n-2);
+
+        int total = fnm1 + fnm2;
+        return total;
+    }
     public static int optimzPower(int a, int n){
         if(n == 0){
             return -1;
@@ -103,5 +117,6 @@ public class Recursion {
         System.out.println(lastOccurs(arr, 5, 0));
         System.out.println(power(25, 0));
         System.out.println(optimzPower(5, 2));
+        System.out.println(tiling(4));
     }
 }
