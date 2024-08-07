@@ -1,6 +1,17 @@
 package Java;
 import java.util.*;
 public class Recursion {
+    public static void conscutive(int n, String str, int last){
+        //Base
+        if(n == 0){
+            System.out.println(str);
+            return;
+        }
+        conscutive(n-1, str+'0', 0);
+        if(last == 0){
+            conscutive(n-1, str+'1', 1);
+        }
+    }
     public static int friendpaired(int n){
         //Base
         if(n == 1 || n == 2){
@@ -149,6 +160,7 @@ public class Recursion {
         String str = "kessshhavv";
         removeDuplicate(map, newStr, 0, str);
         System.out.println(friendpaired(5));
+        conscutive(5, "", 0);
 
     }
 }
