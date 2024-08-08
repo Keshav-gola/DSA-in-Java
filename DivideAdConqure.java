@@ -1,6 +1,29 @@
 package Java;
 
 public class DivideAdConqure {
+    public static int searchInRoated(int arr[], int tar, int si, int ei){
+
+        int mid = (si + ei) / 2;
+        if(arr[mid] == tar){
+            return mid;
+        }
+        if(arr[si] <= arr[mid]){
+            if(arr[si] <= tar && tar <= arr[mid]){
+                return searchInRoated(arr, tar, si, mid-1);
+            }
+            else{
+                return searchInRoated(arr, tar, mid+1, ei);
+            }
+        }
+        else{
+            if(arr[mid] <= tar && tar <= arr[ei]){
+                return searchInRoated(arr, tar, mid+1, ei);
+            }
+            else{
+                return searchInRoated(arr, tar, si, mid-1);
+            }
+        }
+    }
     public static void printArr(int arr[]){
         for(int i = 0; i<arr.length; i++){
             System.out.print(arr[i]+" ");
@@ -77,9 +100,10 @@ public class DivideAdConqure {
         }
     }
     public static void main(String args[]){
-        int arr[] = {8,5,7,6,9,4,2};
+        int arr[] = {7,8,9,0,1,2};
         //meargshor(arr, 0, arr.length-1);
-        quickSort(arr, 0, arr.length-1);
-        printArr(arr);
+        //quickSort(arr, 0, arr.length-1);
+        //printArr(arr);
+        System.out.println(searchInRoated(arr, 0, 0, arr.length-1));
     }
 }
