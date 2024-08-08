@@ -73,6 +73,15 @@ public class Recursion {
         int xn = x * xtmn;
         return xn; 
     }
+    public static void allOccurs(int arr[], int key, int i){
+        if(i == arr.length){
+            return;
+        }
+        if(arr[i] == key){
+            System.out.print(i+" ");
+        }
+        allOccurs(arr, key, i+1);
+    }
     public static int lastOccurs(int arr[], int key, int i){
         if(i == arr.length){
             return -1;
@@ -148,7 +157,7 @@ public class Recursion {
         System.out.println(fact(5));
         System.out.println(sum(10));
         System.out.println(fabinachi(4));
-        int arr[] = {8,9,10,15,16};
+        int arr[] = {8,9,8,10,8,15,16,8};
         System.out.println(isSorted(arr, 0));
         System.out.println(firstOccurs(arr, 15, 0));
         System.out.println(lastOccurs(arr, 5, 0));
@@ -161,6 +170,7 @@ public class Recursion {
         removeDuplicate(map, newStr, 0, str);
         System.out.println(friendpaired(5));
         conscutive(5, "", 0);
+        allOccurs(arr, 8, 0);
 
     }
 }
