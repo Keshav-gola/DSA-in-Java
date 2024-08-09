@@ -168,7 +168,7 @@ public class Recursion {
         boolean map[] = new boolean[26];
         String str = "kessshhavv";
         removeDuplicate(map, newStr, 0, str);
-        System.out.println(friendpaired(5));
+        System.out.println(friendpaired(7));
         conscutive(5, "", 0);
         allOccurs(arr, 8, 0);
 
