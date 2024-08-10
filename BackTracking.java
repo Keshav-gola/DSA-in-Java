@@ -1,6 +1,16 @@
 package Java;
 import java.util.*;
 public class BackTracking {
+    public static int gridWay(int i, int j, int n, int m){
+        if(i == n-1 && j == m-1){
+            return 1;
+        }else if(i == n || j == m){
+            return 0;
+        }
+        int nm1 = gridWay(i+1, j, n, m);
+        int mm1 = gridWay(i, j+1, n, m);
+        return nm1 + mm1;
+    }
     public static void purmentation (String str, String ans){
         if(str.length() == 0){
             System.out.println(ans);
@@ -84,6 +94,9 @@ public class BackTracking {
         }
         nQueen(board, 0);
         System.out.println("Total possible ways are :- "+count);
+        int a = 3, m = 3;
+        System.out.println(gridWay(0, 0, a, m));
+
     }
     
 }
