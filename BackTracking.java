@@ -36,6 +36,7 @@ public class BackTracking {
     public static void nQueen(char board [][], int row){
         //base
         if(row == board.length){
+            count++;
             printBoard(board);
             return;
         }
@@ -67,6 +68,7 @@ public class BackTracking {
         // No
         subSetString(str, ans, i+1);
     }
+    static int count = 0;
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         String str = "abc";
@@ -81,6 +83,7 @@ public class BackTracking {
             }
         }
         nQueen(board, 0);
+        System.out.println("Total possible ways are :- "+count);
     }
     
 }
