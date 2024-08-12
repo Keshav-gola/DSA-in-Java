@@ -1,6 +1,11 @@
 package Java;
 import java.util.ArrayList;
 public class Array_List {
+    public static void ReverseArrayList(ArrayList<Integer> list) {
+        for(int i = list.size()-1; i>=0; i--){
+            System.out.print(list.get(i)+ " ");
+        }
+    }
     public static void main(String args[]){
         ArrayList<Integer> list = new ArrayList<>();
 
@@ -27,5 +32,7 @@ public class Array_List {
 
         System.out.println(list.contains(24));
         System.out.println(list.contains(18));
+
+        ReverseArrayList(list);
     }
 }
