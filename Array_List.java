@@ -1,10 +1,20 @@
 package Java;
 import java.util.ArrayList;
 public class Array_List {
+    public static int maxElement(ArrayList<Integer> list){
+        int m = Integer.MIN_VALUE;
+        for(int i = 0; i<list.size(); i++){
+            if(list.get(i) > m){
+                m = list.get(i);
+            }
+        }
+        return m;
+    }
     public static void ReverseArrayList(ArrayList<Integer> list) {
         for(int i = list.size()-1; i>=0; i--){
             System.out.print(list.get(i)+ " ");
         }
+        System.out.println();
     }
     public static void main(String args[]){
         ArrayList<Integer> list = new ArrayList<>();
@@ -34,5 +44,6 @@ public class Array_List {
         System.out.println(list.contains(18));
 
         ReverseArrayList(list);
+        System.out.println(maxElement(list));
     }
 }
