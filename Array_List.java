@@ -1,6 +1,11 @@
 package Java;
 import java.util.ArrayList;
 public class Array_List {
+    public static void swapingArray(ArrayList<Integer> list, int idx, int idx1){
+        int temp = list.get(idx);
+        list.set(idx, list.get(idx1));
+        list.set(idx1, temp);
+    }
     public static int maxElement(ArrayList<Integer> list){
         int m = Integer.MIN_VALUE;
         for(int i = 0; i<list.size(); i++){
@@ -45,5 +50,7 @@ public class Array_List {
 
         ReverseArrayList(list);
         System.out.println(maxElement(list));
+        swapingArray(list, 2, 4);
+        System.out.println(list);
     }
 }
