@@ -2,6 +2,20 @@ package Java;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Array_List {
+    public static void mulitDList(ArrayList<ArrayList<Integer>> mainList){
+        ArrayList<Integer> list  = new ArrayList<>();
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for(int i = 1; i<6; i++){
+            list.add(i);
+            list1.add(i*2);
+            list2.add(i*3);
+        }
+        mainList.add(list);
+        mainList.add(list1);
+        mainList.add(list2);
+        System.out.println(mainList);
+    }
     public static void sort_ArraList(ArrayList<Integer> list, boolean choice){
         if(choice){
             Collections.sort(list);
@@ -64,5 +78,7 @@ public class Array_List {
 
         sort_ArraList(list, false);
         System.out.println(list);
+        ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
+        mulitDList(mainList);
     }
 }
