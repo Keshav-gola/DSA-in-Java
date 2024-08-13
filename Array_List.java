@@ -1,6 +1,15 @@
 package Java;
 import java.util.ArrayList;
+import java.util.Collections;
 public class Array_List {
+    public static void sort_ArraList(ArrayList<Integer> list, boolean choice){
+        if(choice){
+            Collections.sort(list);
+        }
+        else{
+            Collections.sort(list, Collections.reverseOrder());
+        }
+    }
     public static void swapingArray(ArrayList<Integer> list, int idx, int idx1){
         int temp = list.get(idx);
         list.set(idx, list.get(idx1));
@@ -51,6 +60,9 @@ public class Array_List {
         ReverseArrayList(list);
         System.out.println(maxElement(list));
         swapingArray(list, 2, 4);
+        System.out.println(list);
+
+        sort_ArraList(list, false);
         System.out.println(list);
     }
 }
