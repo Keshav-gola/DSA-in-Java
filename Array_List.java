@@ -2,12 +2,27 @@ package Java;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Array_List {
-    public static boolean pairedSum(ArrayList<Integer> list, int target){
-        for(int i = 0; i<list.size(); i++){
-            for(int j = i+1; j<list.size(); j++){
-                if((list.get(i)+list.get(j))== target){
-                    return true;
-                }
+    public static boolean pairedSum(ArrayList<Integer> check, int target){
+        //----------->BrutForce<------------O(n^2)
+        // for(int i = 0; i<list.size(); i++){
+        //     for(int j = i+1; j<list.size(); j++){
+        //         if((list.get(i)+list.get(j))== target){
+        //             return true;
+        //         }
+        //     }
+        // }
+        //---------------->AdvaceMethod<-------------O(n)
+        //but it work only when list is sorted
+        int lp =0, rp = check.size()-1;
+        while(lp != rp){
+            if((check.get(lp)+check.get(rp)) == target){
+                return true;
+            }
+            else if((check.get(lp)+check.get(rp)) < target){
+                lp++;
+            }
+            else{
+                rp--;
             }
         }
         return false;
@@ -131,6 +146,12 @@ public class Array_List {
         heigth.add(3);
         heigth.add(7);
         System.out.println(trapped_water(heigth));
-        System.out.println(pairedSum(heigth, 8));
+        ArrayList<Integer> check = new ArrayList<>();
+        check.add(2);
+        check.add(5);
+        check.add(8);
+        check.add(10);
+        check.add(12);
+        System.out.println(pairedSum(check, 10));
     }
 }
