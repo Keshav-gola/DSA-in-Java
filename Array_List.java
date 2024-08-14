@@ -2,6 +2,16 @@ package Java;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Array_List {
+    public static boolean pairedSum(ArrayList<Integer> list, int target){
+        for(int i = 0; i<list.size(); i++){
+            for(int j = i+1; j<list.size(); j++){
+                if((list.get(i)+list.get(j))== target){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public static int trapped_water(ArrayList<Integer> heigth){
         int maxWater = 0 ;
         //----->BrutForce<--------O(n^2)
@@ -121,5 +131,6 @@ public class Array_List {
         heigth.add(3);
         heigth.add(7);
         System.out.println(trapped_water(heigth));
+        System.out.println(pairedSum(heigth, 8));
     }
 }
