@@ -2,6 +2,20 @@ package Java;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Array_List {
+    public static int trapped_water(ArrayList<Integer> heigth){
+        int maxWater = 0 ;
+        for(int i = 0; i<heigth.size(); i++){
+            for(int j = i+1; j<heigth.size(); j++){
+                int waterLevel = Math.min(heigth.get(i),heigth.get(j));
+                int width = j-i;
+                int total = waterLevel * width;
+                if(total > maxWater){
+                    maxWater = total;
+                }
+            }
+        }
+        return maxWater;
+    }
     public static void mulitDList(ArrayList<ArrayList<Integer>> mainList){
         ArrayList<Integer> list  = new ArrayList<>();
         ArrayList<Integer> list1 = new ArrayList<>();
@@ -80,5 +94,16 @@ public class Array_List {
         System.out.println(list);
         ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
         mulitDList(mainList);
+        ArrayList<Integer> heigth = new ArrayList<>();
+        heigth.add(1);
+        heigth.add(8);
+        heigth.add(6);
+        heigth.add(2);
+        heigth.add(5);
+        heigth.add(4);
+        heigth.add(8);
+        heigth.add(3);
+        heigth.add(7);
+        System.out.println(trapped_water(heigth));
     }
 }
