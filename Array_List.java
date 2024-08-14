@@ -4,17 +4,33 @@ import java.util.Collections;
 public class Array_List {
     public static int trapped_water(ArrayList<Integer> heigth){
         int maxWater = 0 ;
-        for(int i = 0; i<heigth.size(); i++){
-            for(int j = i+1; j<heigth.size(); j++){
-                int waterLevel = Math.min(heigth.get(i),heigth.get(j));
-                int width = j-i;
-                int total = waterLevel * width;
-                if(total > maxWater){
-                    maxWater = total;
-                }
+        //----->BrutForce<--------O(n^2)
+        // for(int i = 0; i<heigth.size(); i++){
+        //     for(int j = i+1; j<heigth.size(); j++){
+        //         int waterLevel = Math.min(heigth.get(i),heigth.get(j));
+        //         int width = j-i;
+        //         int total = waterLevel * width;
+        //         if(total > maxWater){
+        //             maxWater = total;
+        //         }
+        //     }
+        // }
+        //---------------->Optimize<------------O(n)
+        int lp = 0;
+        int rp = heigth.size()-1;
+        while(lp < rp){
+            int waterLevel = Math.min(heigth.get(lp),heigth.get(rp));
+            int width = rp-lp;
+            int total = waterLevel * width;
+            maxWater = Math.max(total, maxWater);
+            if(heigth.get(lp)< heigth.get(rp)){
+                lp++;
+            }else{
+                rp--;
             }
         }
         return maxWater;
+
     }
     public static void mulitDList(ArrayList<ArrayList<Integer>> mainList){
         ArrayList<Integer> list  = new ArrayList<>();
