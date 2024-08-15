@@ -2,6 +2,30 @@ package Java;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Array_List {
+    public static boolean pariedforroated(ArrayList<Integer> sort, int target){
+        int br = -1;
+        for(int i = 0; i<sort.size(); i++){
+            if(sort.get(i)<sort.get(i+1)){
+                br = i;
+                break;
+            }
+        }
+        int n = sort.size();
+        int lp = br+1;
+        int rp = br;
+        while (lp != rp) {
+            if(sort.get(lp)+sort.get(rp) == target){
+                return true;
+            }
+            else if(sort.get(lp)+sort.get(rp) < target){
+                lp = (lp+1)%n;
+            }
+            else{
+                rp = (n+rp-1) %n; 
+            }
+        }
+        return false;
+    }
     public static boolean pairedSum(ArrayList<Integer> check, int target){
         //----------->BrutForce<------------O(n^2)
         // for(int i = 0; i<list.size(); i++){
@@ -153,5 +177,14 @@ public class Array_List {
         check.add(10);
         check.add(12);
         System.out.println(pairedSum(check, 10));
+        //Sorted & Roated ArrayList
+        ArrayList<Integer> sort = new ArrayList<>();
+        sort.add(11);
+        sort.add(15);
+        sort.add(6);
+        sort.add(8);
+        sort.add(9);
+        sort.add(10);
+        System.out.println(pariedforroated(sort, 24));
     }
 }
