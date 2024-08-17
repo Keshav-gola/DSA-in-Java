@@ -46,6 +46,20 @@ public class LinkedList {
         }
         System.out.println();
     }
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        int i = 0;
+
+        while(i< idx-1){
+            temp = temp.next;
+            i++;
+        }
+
+        //i = idx-1; temp -> prev
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
