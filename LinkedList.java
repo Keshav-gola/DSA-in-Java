@@ -106,6 +106,18 @@ public class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+    public int search(int key){
+        Node temp = head;
+        int i = 0;
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -117,6 +129,8 @@ public class LinkedList {
         ll.print();
         ll.removeLast();
         ll.print();
+        int idx = ll.search(3);
+        System.out.println(idx);
         
     }
 }
