@@ -133,13 +133,28 @@ public class LinkedList {
     }
     public int recSerch(int key){
         return helper(head, key);
-    }   
+    } 
+    public void reverse(){
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }  
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(3);  
         ll.addLast(4); 
+        ll.addLast(5);
+        ll.addLast(6);
         ll.print();
         ll.removeFirst();
         ll.print();
@@ -149,6 +164,8 @@ public class LinkedList {
         System.out.println(idx);
         int recIdx = ll.recSerch(3);
         System.out.println(recIdx);
+        ll.reverse();
+        ll.print();
         
     }
 }
