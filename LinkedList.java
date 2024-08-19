@@ -27,6 +27,21 @@ public class LinkedList {
         //step3 - head = newNode
         head = newNode;
     }
+    public void deletNthfromEnd(int n){
+        if(n == size){
+            head = head.next;
+            return;
+        }
+        int i = 1; 
+        int iTofind = size -n;
+        Node prev = head;
+        while(i < iTofind){
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
     public int removeFirst(){
         if(size == 0){
             System.out.println("LinkedList is empty");
@@ -165,6 +180,8 @@ public class LinkedList {
         int recIdx = ll.recSerch(3);
         System.out.println(recIdx);
         ll.reverse();
+        ll.print();
+        ll.deletNthfromEnd(2);
         ll.print();
         
     }
