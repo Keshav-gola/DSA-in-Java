@@ -41,8 +41,13 @@ You should see a version number if Java is installed.
 **To clone this repository to your local machine, run the following command**
 
 ```sh
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/Keshav-gola/Java.git
 ```
+**Navigate to the project directory**
+```sh
+cd Java
+```
+
 ## Running the Java Files
 **Once you have cloned the repository and navigated to the project directory, you can run the `Java files` using the following steps**
   1. Compile the Java file:
