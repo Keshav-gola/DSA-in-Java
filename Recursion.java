@@ -93,7 +93,7 @@ public class Recursion {
         return lastFound;
     }
     public static int firstOccurs(int arr[], int key, int i){
-        if(i == arr.length-1){
+        if(i == arr.length){
             return -1;
         }
         if(arr[i] == key){
@@ -157,9 +157,9 @@ public class Recursion {
         System.out.println(fact(5));
         System.out.println(sum(10));
         System.out.println(fabinachi(4));
-        int arr[] = {8,9,8,10,8,15,16,8};
+        int arr[] = {5,9,5,10,5,15,16,8};
         System.out.println(isSorted(arr, 0));
-        System.out.println(firstOccurs(arr, 15, 0));
+        System.out.println(firstOccurs(arr, 8, 0));
         System.out.println(lastOccurs(arr, 5, 0));
         System.out.println(power(25, 0));
         System.out.println(optimzPower(5, 2));
