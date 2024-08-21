@@ -10,6 +10,7 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 - [Running the Java Files](#running-the-java-files)
 - [Topics Covered](#topics-covered)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -80,3 +81,5 @@ This repository covers a broad range of data structures and algorithms, includin
 ## Contributing
 Contributions are welcome! If you have a new algorithm or data structure to add, feel free to fork the repository, create a new branch, and submit a pull request. Please ensure that your code is well-documented and includes test cases.
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
