@@ -79,7 +79,7 @@ This repository covers a broad range of data structures and algorithms, includin
 - **Dynamic Programming :** Problems that involve solving complex problems by breaking them down into simpler subproblems.
 
 ## Contributing
-Contributions are welcome! If you have a new algorithm or data structure to add, feel free to fork the repository, create a new branch, and submit a pull request. Please ensure that your code is well-documented and includes test cases.
+Wanna be a part of this project? Check out the [Contributing Guidelines](Contribution.md) and start contributing.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
