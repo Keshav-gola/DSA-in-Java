@@ -1,7 +1,7 @@
 package Java;
 import java.util.*;
 public class BackTracking {
-    public static boolean isSafe(int sudoku[][], int row, int col, int digit){
+    public static boolean isSafe(int sudoku[][], int row, int col, int digit){  // This function is helper function for sudoku_solver.
         //column
         for(int i = 0; i <= 8; i++ ){
             if(sudoku[i][col] == digit){
@@ -83,7 +83,7 @@ public class BackTracking {
             purmentation(Newstr, ans+curr);
         }
     }
-    public static boolean isSafe(char board[][], int row, int col){
+    public static boolean isSafe(char board[][], int row, int col){  // This function is a helper function used for N_Queen Problem
         //vertical upside
         for(int i = row-1; i>=0; i--){
             if(board[i][col] == 'Q'){
