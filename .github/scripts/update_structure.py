@@ -2,7 +2,19 @@ import os
 from github import Github
 
 def get_repo_structure(path='.', prefix=''):
-    # ... (keep the existing get_repo_structure function as is)
+    structure = []
+    items = sorted(os.listdir(path))
+    for i, item in enumerate(items):
+        if item.startswith('.'):
+            continue
+        item_path = os.path.join(path, item)
+        is_last = i == len(items) - 1
+        current_prefix = '└── ' if is_last else '├── '
+        structure.append(f"{prefix}{current_prefix}{item}")
+        if os.path.isdir(item_path):
+            next_prefix = prefix + ('    ' if is_last else '│   ')
+            structure.extend(get_repo_structure(item_path, next_prefix))
+    return structure
 
 def update_structure_file(structure):
     with open('repo_structure.txt', 'w') as f:
