@@ -33,5 +33,5 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add repo_structure.txt
+        git add repo_structure.txt README.md
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update repo structure" && git push)
