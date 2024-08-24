@@ -1,5 +1,5 @@
 package Java;
-import java.util.*;
+//import java.util.*;
 public class Recursion {
     public static void conscutive(int n, String str, int last){
         //Base

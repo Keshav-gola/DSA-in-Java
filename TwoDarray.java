@@ -97,5 +97,6 @@ public class TwoDarray {
         // }
         boolean sum = search(arr, 25);
         System.out.println(sum);
+        sc.close();
     }
 }

@@ -169,6 +169,7 @@ public class BackTracking {
         }else{
             System.out.println("Solution does not exist");
         }
+        sc.close();
     }
     
 }

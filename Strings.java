@@ -84,5 +84,6 @@ public class Strings {
         //subString(str, sc.nextInt(), sc.nextInt());
         StringBuilder sb = compress(str);
         System.out.println(sb);
+        sc.close();
     }
 }

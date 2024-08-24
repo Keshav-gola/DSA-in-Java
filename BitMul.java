@@ -58,5 +58,6 @@ public class BitMul {
         System.out.println(setIthbit(a, b));
 
         System.out.println(clearIthbit(a, b));
+        sc.close();
     }
 }
