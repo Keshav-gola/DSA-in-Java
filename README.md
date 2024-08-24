@@ -5,6 +5,7 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 ## Table of Contents
 
 - [Features](#features)
+- [Project Structure](#project-structure)
 - [Installation](#installation)
 - [How to Clone](#how-to-clone)
 - [Running the Java Files](#running-the-java-files)
@@ -18,6 +19,11 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 - **Optimized Solutions**: Each algorithm is implemented with efficiency in mind, ensuring optimal performance.
 - **Modular Code**: The codebase is well-structured and modular, making it easy to navigate and understand.
 - **Practical Examples**: Real-world examples and test cases accompany each implementation, helping you grasp the concepts quickly.
+
+## Project Structure
+
+<!-- START_STRUCTURE -->
+<!-- END_STRUCTURE -->
 
 ## Installation
 
