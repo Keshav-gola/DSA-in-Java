@@ -1,37 +1,37 @@
 import os
-import json
 from github import Github
 
-def get_repo_structure(path='.'):
-    structure = {}
-    for item in os.listdir(path):
+def get_repo_structure(path='.', prefix=''):
+    structure = []
+    items = sorted(os.listdir(path))
+    for i, item in enumerate(items):
+        if item.startswith('.'):
+            continue
         item_path = os.path.join(path, item)
+        is_last = i == len(items) - 1
+        current_prefix = '└── ' if is_last else '├── '
+        structure.append(f"{prefix}{current_prefix}{item}")
         if os.path.isdir(item_path):
-            structure[item] = get_repo_structure(item_path)
-        else:
-            structure[item] = None
+            next_prefix = prefix + ('    ' if is_last else '│   ')
+            structure.extend(get_repo_structure(item_path, next_prefix))
     return structure
 
 def update_structure_file(structure):
-    with open('repo_structure.json', 'w') as f:
-        json.dump(structure, f, indent=2)
+    with open('repo_structure.txt', 'w') as f:
+        f.write('\n'.join(structure))
 
 def main():
-    # Get the current repository
     g = Github(os.environ['GITHUB_TOKEN'])
     repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
 
-    # Get the current structure
     current_structure = get_repo_structure()
 
-    # Check if the structure file exists
     try:
-        contents = repo.get_contents("repo_structure.json")
-        existing_structure = json.loads(contents.decoded_content.decode())
+        contents = repo.get_contents("repo_structure.txt")
+        existing_structure = contents.decoded_content.decode().split('\n')
     except:
         existing_structure = None
 
-    # If the structure has changed or the file doesn't exist, update it
     if current_structure != existing_structure:
         update_structure_file(current_structure)
         print("Repository structure updated.")
