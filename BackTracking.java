@@ -157,15 +157,12 @@ public class BackTracking {
         System.out.println("Total possible ways are :- "+count);
         int a = 3, m = 3;
         System.out.println(gridWay(0, 0, a, m));
-        int sudoku[][]= {{0,5,0,0,4,0,0,0,0},
-                         {2,7,0,0,9,0,0,0,3},
-                         {0,0,1,0,0,5,0,9,0},
-                         {1,0,8,7,0,0,6,0,0},
-                         {7,0,0,0,0,0,0,0,1},
-                         {0,0,5,0,0,4,8,0,7},
-                         {0,1,0,4,0,0,5,0,0},
-                         {8,0,0,0,3,0,0,6,2},
-                         {0,0,0,0,6,0,0,8,0}};
+        int sudoku[][]= new int[9][9];
+        for(int i = 0; i<sudoku.length; i++){
+            for(int j = 0; j<sudoku.length; j++){
+                sudoku[i][j] = sc.nextInt();
+            }
+        }
         if(sudokuSolver(sudoku, 0, 0)){
             System.out.println("Solution exists");
             printSudoku(sudoku);
