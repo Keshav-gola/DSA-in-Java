@@ -23,6 +23,22 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 ## Project Structure
 
 <!-- START_STRUCTURE -->
+```
+├── ARRAY.java
+├── Array_List.java
+├── BackTracking.java
+├── BitMul.java
+├── Contribution.md
+├── DivideAdConqure.java
+├── LICENSE
+├── LinkedList.java
+├── Oops.java
+├── README.md
+├── Recursion.java
+├── Strings.java
+├── TwoDarray.java
+└── repo_structure.txt
+```
 <!-- END_STRUCTURE -->
 
 ## Installation
