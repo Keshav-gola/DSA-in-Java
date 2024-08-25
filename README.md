@@ -5,6 +5,7 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 ## Table of Contents
 
 - [Features](#features)
+- [Project Structure](#project-structure)
 - [Installation](#installation)
 - [How to Clone](#how-to-clone)
 - [Running the Java Files](#running-the-java-files)
@@ -18,6 +19,27 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 - **Optimized Solutions**: Each algorithm is implemented with efficiency in mind, ensuring optimal performance.
 - **Modular Code**: The codebase is well-structured and modular, making it easy to navigate and understand.
 - **Practical Examples**: Real-world examples and test cases accompany each implementation, helping you grasp the concepts quickly.
+
+## Project Structure
+
+<!-- START_STRUCTURE -->
+```
+├── ARRAY.java
+├── Array_List.java
+├── BackTracking.java
+├── BitMul.java
+├── Contribution.md
+├── DivideAdConqure.java
+├── LICENSE
+├── LinkedList.java
+├── Oops.java
+├── README.md
+├── Recursion.java
+├── Strings.java
+├── TwoDarray.java
+└── repo_structure.txt
+```
+<!-- END_STRUCTURE -->
 
 ## Installation
 
