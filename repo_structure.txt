@@ -5,6 +5,7 @@
 ├── BitMul.java
 ├── Contribution.md
 ├── DivideAdConqure.java
+├── DoubleLinklist.java
 ├── LICENSE
 ├── LinkedList.java
 ├── Mainfile.java

@@ -31,6 +31,7 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 ├── BitMul.java
 ├── Contribution.md
 ├── DivideAdConqure.java
+├── DoubleLinklist.java
 ├── LICENSE
 ├── LinkedList.java
 ├── Mainfile.java
