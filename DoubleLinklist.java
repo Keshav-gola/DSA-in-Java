@@ -61,6 +61,19 @@ public class DoubleLinklist {
         tail.next = null;
         size--;
     }
+    public void reverse(){
+        Node prev = null;
+        Node curr = head;
+        Node next;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
     public void print(){
         Node temp = head;
         while(temp != null){
