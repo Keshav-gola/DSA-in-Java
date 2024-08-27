@@ -25,6 +25,7 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 <!-- START_STRUCTURE -->
 ```
 ├── ARRAY.java
+├── AdvLinklist.java
 ├── Array_List.java
 ├── BackTracking.java
 ├── BitMul.java
