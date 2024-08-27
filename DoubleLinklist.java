@@ -31,12 +31,35 @@ public class DoubleLinklist {
         if(size == 1){
             head = tail = null;
             size--;
+            return;
         }
         else{
             head = head.next;
             head.prev = null;
             size--;
         }
+    }
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
+    }
+
+    public void removeLast(){
+        if(size == 1){
+            head = tail = null;
+            size--;
+            return;
+        }
+        tail = tail.prev;
+        tail.next = null;
+        size--;
     }
     public void print(){
         Node temp = head;
