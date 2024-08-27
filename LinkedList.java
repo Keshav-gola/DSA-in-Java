@@ -259,6 +259,41 @@ public class LinkedList {
         //merge
         return merge(newLeft, newRight);
     } 
+    public void ZigZag(){
+        //Mid 
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+
+        //Reverse
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        //alternative
+        Node LHead = head;
+        Node RHead = prev;
+        Node nextL,nextR;
+        while(LHead != null && RHead != null){
+            nextL = LHead.next;
+            LHead.next = RHead;
+            nextR = RHead.next;
+            RHead.next = nextL;
+
+            LHead = nextL;
+            RHead = nextR;
+        }
+    }
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         // ll.addFirst(1);
@@ -283,14 +318,16 @@ public class LinkedList {
         // System.out.println(ll.checkPalindrome());
 
         // LinkedList ll2 = new LinkedList();
-        ll.addFirst(1);
-        ll.addFirst(2);    
-        ll.addFirst(3);
-        ll.addFirst(4);
-        ll.addFirst(5);
-        ll.print();
-        ll.head = ll.mergeSort(ll.head);
+        ll.addLast(1);
+        ll.addLast(2);    
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        // ll.print();
+        // ll.head = ll.mergeSort(ll.head);
         ll.print(); 
+        ll.ZigZag();
+        ll.print();
 
         
     }
