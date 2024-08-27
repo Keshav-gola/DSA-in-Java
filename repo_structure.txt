@@ -11,5 +11,4 @@
 ├── Recursion.java
 ├── Strings.java
 ├── TwoDarray.java
-├── datastore.txt
 └── repo_structure.txt
