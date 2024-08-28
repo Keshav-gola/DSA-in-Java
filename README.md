@@ -38,6 +38,10 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 ├── Oops.java
 ├── README.md
 ├── Recursion.java
+├── Stack
+│   ├── StackArrlist.java
+│   ├── StackCollection.java
+│   └── StackLinklist.java
 ├── Strings.java
 ├── TwoDarray.java
 └── repo_structure.txt
