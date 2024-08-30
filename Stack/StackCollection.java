@@ -57,6 +57,25 @@ public class StackCollection {
             s.push(i); 
         }
     }
+    public static void nextGratest(int arr[], int nxtGrate[], Stack<Integer> s){
+        for(int i = arr.length-1; i>= 0; i--){
+            //1 while
+            while(!s.isEmpty() && arr[s.peek()] <= arr[i]){
+                s.pop();
+            }
+
+            //2 if - else
+            if(s.isEmpty()){
+                nxtGrate[i] = -1;
+            }
+            else{
+                nxtGrate[i] = arr[s.peek()];
+            }
+            //3 push in s
+            s.push(i);
+        }
+    }
+
     public static void main(String args[]){
         Stack <Integer> s = new Stack<>();
         s.push(1);
@@ -73,11 +92,25 @@ public class StackCollection {
         System.out.println(reuslt);
         reverseStack(s);
         printStack(s);
+        
+        
         int stock[] = {100,80,60,70,60,85,100};
         int span[] = new int[stock.length];
+        
         stockSpan(stock, span);
         for(int i =0; i<span.length; i++){
             System.out.print(span[i]+ " ");
         }
+        System.out.println();
+
+        int arr[] = {6,8,0,1,3};
+        Stack <Integer> obj = new Stack<>();
+        int nextGrater[] = new int[arr.length];
+
+        nextGratest(arr, nextGrater, obj);
+        for(int i =0; i<nextGrater.length; i++){
+            System.out.print(nextGrater[i]+ " ");
+        }
+        
     }
 }
