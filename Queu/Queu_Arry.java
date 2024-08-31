@@ -39,6 +39,15 @@ public class Queu_Arry {
             rear = rear -1;
             return front;
         }
+
+        //peek
+        public static int peek(){
+            if(isEmpty()){
+                System.out.println("Empty Queue");
+                return -1;
+            }
+            return arr[0];
+        }
     }
     public static void main(String args[]){
          
