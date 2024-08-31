@@ -36,6 +36,8 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 ├── LinkedList.java
 ├── Mainfile.java
 ├── Oops.java
+├── Queu
+│   └── Queu_Arry.java
 ├── README.md
 ├── Recursion.java
 ├── Stack
