@@ -59,6 +59,6 @@ public class Queu_Arry {
             System.out.println(q.peek());
             q.remove();
          }
-    }
+    } 
     
 }
