@@ -1,13 +1,13 @@
 package Java.Queu;
 
 public class Circular {
-    static class Queue{
+    static class Queu{
         static int arr[];
         static int size;
         static int front;
         static int rear;
 
-        Queue(int n){
+        Queu(int n){
             arr = new int[n];
             size = n;
             front = -1;
@@ -40,7 +40,7 @@ public class Circular {
                 return -1;
             }
             int result = arr[front];
-            front = (front +1 ) % size;
+            
             //last el delete
             if(rear == front){
                 rear = front = -1;
@@ -51,6 +51,29 @@ public class Circular {
             return result;
         }
 
+        //peek
+        public static int peek(){
+            if(isEmpty()){
+                System.out.println("Empty queue");
+                return -1;
+            }
+            return arr[front];
+        }
 
+    }
+    public static void main(String args []){
+        Queu q = new Queu(5);
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        //  System.out.println(q.remove());
+        // q.add(4);
+        // System.out.println(q.remove());
+        // q.add(5);
+
+        while(!q.isEmpty()){
+            System.out.println(q.peek());
+            q.remove();
+        }
     }
 }
