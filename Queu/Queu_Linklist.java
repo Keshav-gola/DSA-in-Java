@@ -46,8 +46,25 @@ public class Queu_Linklist {
             }
             return front;
         }
-        
+        public static int peek(){
+            if(isEmpty()){
+                System.out.println("Empty queue");
+                return -1;
+            }
+            return head.data;
+        }
+    }
+    public static void main(String args[]){
+        Queue q = new Queue();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        q.add(4);
 
+        while(!q.isEmpty()){
+            System.out.println(q.peek());
+            q.remove();
+        }
     }
     
 }
