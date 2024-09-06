@@ -1,6 +1,6 @@
 package Java.Queu;
 
-import java.util.Stack;
+import java.util.*;
 
 public class Queu_Stack {
     static class Queue{
@@ -30,6 +30,24 @@ public class Queu_Stack {
             }
             return s1.pop();
         }
-        //
+        //peek
+        public static int peek(){
+            if(isEmpty()){
+                System.out.println("Queue empty");
+                return -1;
+            }
+            return s1.peek();
+        }
+    }
+    public static void main(String args[]){
+        Queue q = new Queue();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+
+        while(!q.isEmpty()){
+            System.out.println(q.peek());
+            q.remove();
+        }
     }
 }
