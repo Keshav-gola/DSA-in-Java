@@ -46,6 +46,27 @@ public class QueueB {
             }
             return top;
         }
-        
+        public static int peek (){
+            if(isEmpty()){
+                System.out.println("Empty stack");
+                return -1;
+            }
+            int top = -1;
+
+            //case 1
+            if(!q1.isEmpty()){
+                while (!q1.isEmpty()) {
+                    top = q1.remove();
+                    q2.add(top);
+                }
+            }
+            else{
+                while(!q2.isEmpty()){
+                    top = q2.remove();
+                    q1.add(top);
+                }
+            }
+            return top;
+        }
     }
 }
