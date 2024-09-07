@@ -40,7 +40,8 @@ Welcome to the **Java DSA Solutions** repository, your ultimate resource for mas
 │   ├── Circular.java
 │   ├── Queu_Arry.java
 │   ├── Queu_Linklist.java
-│   └── Queu_Stack.java
+│   ├── Queu_Stack.java
+│   └── QueueB.java
 ├── README.md
 ├── Recursion.java
 ├── Stack
